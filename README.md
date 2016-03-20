@@ -1,1 +1,1 @@
-# template-eqdkp_stainless
+# template-eqdkp_pure
