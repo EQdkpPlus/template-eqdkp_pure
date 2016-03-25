@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<install type="template" version="0.0.1">
+	<name>EQdkp Pure</name>
+	<author>GodMod</author>
+	<authorEmail></authorEmail>
+	<authorUrl>http://eqdkp-plus.eu</authorUrl>
+	<creationDate>2015-12-25T09:10:38+00:00</creationDate>
+	<copyright>GodMod</copyright>
+	<license>AGPL v3</license>
+	<version>0.0.1</version>
+	<description></description>
+	<folder>eqdkp_pure</folder>
+</install>
