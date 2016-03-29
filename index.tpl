@@ -519,6 +519,18 @@
 
 		{JS_CODE_EOP}
 		
+		$(window).on('scroll', function() {
+			var topMenu = $('#nav');
+			
+			if($(document).scrollTop() > $("#banner").height()){
+				if(!topMenu.hasClass("jsFixed")){
+					topMenu.addClass('jsFixed');
+				}
+			} else {
+				topMenu.removeClass('jsFixed');
+			}
+		});
+		
 		//Reset Favicon, for Bookmarks
 		$(window).on('unload', function() {
             if (typeof favicon !== 'undefined'){ favicon.reset(); }
