@@ -345,8 +345,11 @@ h3 {
 #logoContainer {
 	overflow: hidden;
 	display:table;
+	height: 140px;
 }
-
+img#mainlogo{
+			max-height:134px;
+}
 #header .center {
 	margin-left:auto;
 	margin-right:auto;
@@ -583,9 +586,10 @@ h3 {
 // mainmenu
 #nav{background: @eqdkpMenuBackgroundColor;z-index:99}
 
-#nav .fixed{
-	position:fixed;
-	margin-top:-166px;
+#nav.jsFixed{
+	position: fixed;
+	margin-top: -147px;
+	width: 100%;
 }
 ul.mainmenu { width: 90%; padding-bottom: .3em; font-size: 14px; margin-left:40px;}
 ul.mainmenu li { position: relative; transition: background .2s ease-out; border-bottom:2px solid transparent;}
