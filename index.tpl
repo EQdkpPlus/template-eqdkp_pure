@@ -372,15 +372,16 @@
 					</div>
 					<!-- ENDIF -->
 				</div>
+					
+					<!-- LISTENER footer_top -->
+					<div class="portal_block2">{PORTAL_BLOCK2}</div>
+					
+					<!-- LISTENER footer_bottom -->{EQDKP_PLUS_COPYRIGHT}
+				<!-- close footer -->
 			</footer>
 		</section>
 		
-		<footer id="footer">
-				<!-- LISTENER footer_top -->
-				<div class="portal_block2">{PORTAL_BLOCK2}</div>
-				{EQDKP_PLUS_COPYRIGHT}
-				<!-- LISTENER footer_bottom -->
-		</footer><!-- close footer -->
+
 	</div><!-- close wrapper -->
 	
 	<!-- ELSE -->

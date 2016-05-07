@@ -36,7 +36,7 @@
 	<table_tr_background_color2>rgb(245, 245, 245)</table_tr_background_color2>
 	<table_tr_background_color_hover>rgb(232, 232, 232)</table_tr_background_color_hover>
 	<table_border_color>rgb(221, 221, 221)</table_border_color>
-	<menu_background_color>#336699</menu_background_color>
+	<menu_background_color>rgb(44, 115, 169)</menu_background_color>
 	<menu_font_color>#f3f3f3</menu_font_color>
 	<menu_item_background_color>rgba(255, 255, 255, 0)</menu_item_background_color>
 	<menu_item_background_color_hover>rgb(0, 0, 0)</menu_item_background_color_hover>

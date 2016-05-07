@@ -3,12 +3,13 @@
 ##to Do's
 
 ###Mainmenu
-- Javascript - snipped steht aus, css definiert '#nav .fixed' 50%
-- Farbanpassungen vornehmen 60%
+- Javascript - done
+- Farbanpassungen vornehmen 99%
 - Responsiv 0%
 
 ###Footer
-- unangetastet 0%
+- done 99%
+- eigene Anpassung für Portalmodule Menu (mehr als eins möglich)
 
 #PersonalArea
 - fixiert
