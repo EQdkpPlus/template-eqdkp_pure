@@ -40,7 +40,7 @@
 	<menu_font_color>#f3f3f3</menu_font_color>
 	<menu_item_background_color>rgba(255, 255, 255, 0)</menu_item_background_color>
 	<menu_item_background_color_hover>rgb(0, 0, 0)</menu_item_background_color_hover>
-	<menu_item_font_color_hover>rgb(217, 215, 215)</menu_item_font_color_hover>
+	<menu_item_font_color_hover>rgb(255, 255, 255)</menu_item_font_color_hover>
 	<sidebar_background_color>rgb(234, 234, 234)</sidebar_background_color>
 	<sidebar_font_color>rgb(0, 0, 0)</sidebar_font_color>
 	<sidebar_border_color>rgb(204, 204, 204)</sidebar_border_color>
@@ -62,7 +62,7 @@
 	<content_positive_color>rgb(51, 204, 51)</content_positive_color>
 	<content_negative_color>rgb(226, 59, 48)</content_negative_color>
 	<content_neutral_color>rgb(153, 153, 153)</content_neutral_color>
-	<content_highlight_color>rgb(78, 127, 168)</content_highlight_color>
+	<content_highlight_color>#173c58</content_highlight_color>
 	<misc_color1>rgb(78, 127, 168)</misc_color1>
 	<misc_color2>rgb(255, 255, 255)</misc_color2>
 	<misc_color3></misc_color3>

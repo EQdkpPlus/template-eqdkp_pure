@@ -412,9 +412,9 @@ img#mainlogo{
 }
 
 #contentBody {
-	background-color: lighten(@eqdkpContentBackgroundColor, 5);
+/*	background-color: lighten(@eqdkpContentBackgroundColor, 5);
 	border: 1px solid @eqdkpContentBorderColor;
-	border-radius: 3px 3px 3px 3px;
+	border-radius: 3px 3px 3px 3px;*/
 	margin: 5px;
 	padding: 1px;
 	margin-bottom: 14px;
@@ -423,7 +423,7 @@ img#mainlogo{
 
 #contentBody2 {
 	padding: 5px;
-	background-color: @eqdkpContentBackgroundColor;
+/*	background-color: @eqdkpContentBackgroundColor;*/
 	text-align: left;
 }
 
@@ -583,11 +583,12 @@ img#mainlogo{
 	margin-top:-166px;
 	margin-top: -147px;
 	width: 100%;
+	z-index: 3;
  }
 ul.mainmenu { 
 	width: 100%;	
-	padding-bottom: .0em;	
-	background: linear-gradient(to bottom, @eqdkpMenuBackgroundColor 0%, darken(@eqdkpMenuBackgroundColor, 0)  100%);	
+	padding-bottom: .0em;
+	background: darken(@eqdkpMenuBackgroundColor,20);	
 	font-size: 14px;
 }
 ul.mainmenu li { 
@@ -595,12 +596,12 @@ ul.mainmenu li {
 	transition: background .2s ease-out;
 }
 ul.mainmenu li:hover { 
-/*	background: @eqdkpMenuItemBackgroundColorHover;*/
+	background: @eqdkpMenuItemBackgroundColorHover;
 	transition: none;
 }
-ul.mainmenu li:hover a { 
-	/*color: @eqdkpMenuItemFontColorHover;*/
-	text-shadow: 1px 1px 5px #06F;
+ul.mainmenu li:hover > a { 
+	color: @eqdkpMenuItemFontColorHover;
+	text-shadow: 1px 1px 5px #02c9ff;
 }
 ul.mainmenu > li { 
 	display: inline-block;
@@ -613,7 +614,7 @@ ul.mainmenu > li:last-child {
 	border-right: none;
 }
 ul.mainmenu > li li { 
-	background: darken(@eqdkpMenuBackgroundColor, 0);
+	background: darken(@eqdkpMenuBackgroundColor, 20);
 	font-size: 13px;
 }
 ul.mainmenu a,
@@ -674,7 +675,7 @@ body:not(.admin) ul.mainmenu {
 ul.adminmenu { 
 	width: 100%;	
 	margin-bottom: .3em;	
-	background: darken(@eqdkpMenuBackgroundColor,20);	
+	background: linear-gradient(to bottom, @eqdkpMenuBackgroundColor 0%, darken(@eqdkpMenuBackgroundColor, 0)  100%);
 	font-size: 14px;	
 	}
 ul.adminmenu li { 
@@ -685,7 +686,7 @@ ul.adminmenu li:hover {
 	background: @eqdkpMenuItemBackgroundColorHover;
 	transition: none;
 }
-ul.adminmenu li:hover a { 
+ul.adminmenu li:hover > a { 
 	color: @eqdkpMenuItemFontColorHover;
 	text-shadow: 1px 1px 5px #06F;
 }
@@ -700,7 +701,7 @@ ul.adminmenu > li:last-child {
 	border-right: none;
 }
 ul.adminmenu > li li { 
-	background: darken(@eqdkpMenuBackgroundColor,20);
+	background: @eqdkpMenuBackgroundColor;
 	border-top: 1px solid #000;
 	font-size: 12px;
 }
@@ -1593,13 +1594,15 @@ div[aria-describedby="dialog-login"] .password-forgot{
 	font-size: 1.0em !important;
 	font-family: Tahoma, Arial, sans-serif;
 }
-
+.ui-tabs .ui-tabs-panel{
+	background:#fff;
+}
 .ui-tabs .ui-tabs-nav .ui-tabs-anchor { min-height:1.7em; } /* Fixes for update badges */
 
 .sf-admin > li > a{ min-height: 1.4em; } /* Fixes for update badges */
 
 #contentBody .ui-tabs th.footer {
-	background-color: #fff !important;
+	/*background-color: #fff !important;*/
 }
 
 .confirm_content ul{
@@ -1889,6 +1892,7 @@ ul.breamcrumb .current::before{
 .article-container {
 	margin-bottom: 30px;
 	margin-top: 20px;
+	background: @eqdkpContentBackgroundColor;
 }
 
 .article-container.list-type2 header, .article-container.list-type2 header h3, .article-container.list-type2 p {
@@ -2073,6 +2077,7 @@ ul.breamcrumb .current::before{
 
 .article-container.featured, .article_detail_container.featured{
 	display: block;
+	background:@eqdkpContentBackgroundColor;
 }
 
 .article_detail_container.featured:before {
@@ -2277,6 +2282,12 @@ ul.portal_block {
 }
 #calendar_loading img{
 	margin: 0px 5px 0px 5px;
+}
+.article_content .ui-widget-content{
+	background: transparent;
+}
+div #calendar_tab .ui-widget-content{
+	background: eqdkpContentBackgroundColor;
 }
 .fc-icons{
 	margin-left: 4px;
@@ -4309,7 +4320,7 @@ button.thirdpartylogin.openid {
 }
 /* Ribbons */
 @ribbon: @eqdkpContentHighlightColor;
-@featuredColor: gold;
+@featuredColor: #008fb6;
 
 .ribbon {
 	margin: 3px;
@@ -4325,8 +4336,8 @@ button.thirdpartylogin.openid {
 	bottom: 0em;
 	left: 0;
 	margin-right: 0.2em;
-	padding: .75em 1.25em .75em .75em;
-	margin-left:-0.5em;
+	padding: .75em 1.0em .75em .75em;
+	margin-left: 0.5em;
 	background-color: @ribbon;
 	background-image: linear-gradient(-90deg, lighten(@ribbon,20%) 0%, @ribbon 100%);
 	box-shadow: inset 0 .062em 0 rgba(255,255,255,.6), 0 .125em .25em rgba(0,0,0,.2);
@@ -4335,10 +4346,9 @@ button.thirdpartylogin.openid {
 	width: 90%;
 	text-align: center;
 	display: block;
-	border-radius: 0 0 0 .5em;
 	word-wrap: break-word;
 }
-
+/*
 .ribbon span:before {
   content: '';
   position: absolute;
@@ -4369,10 +4379,11 @@ button.thirdpartylogin.openid {
 	border-radius: .5em 0 0 .5em;
 	background-image: linear-gradient(to right, lighten(@ribbon,1%) 0%, darken(@ribbon,1%) 100%);
 	box-shadow: 0 .062em 0 rgba(255,255,255,.6);
-}
+}*/
 .featured .ribbon > span {
 	background: linear-gradient(-90deg, lighten(@featuredColor,20%) 0%, @featuredColor 100%);
 	color: black;
+	box-shadow: 0 .125em .25em rgb(0, 0, 0);
 }
 
 .featured .ribbon > span:before {
