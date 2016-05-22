@@ -378,16 +378,17 @@
 					
 					<!-- LISTENER footer_bottom -->{EQDKP_PLUS_COPYRIGHT}
 				<!-- close footer -->
+				<!-- ELSE -->
+				<!-- IF S_SHOW_QUERIES --><br />{DEBUG_TABS}<!-- ENDIF -->
+				<!-- LISTENER debug -->
+				<!-- ENDIF -->{FOOTER_CODE}
 			</footer>
 		</section>
 		
 
 	</div><!-- close wrapper -->
 	
-	<!-- ELSE -->
-		<!-- IF S_SHOW_QUERIES --><br />{DEBUG_TABS}<!-- ENDIF -->
-		<!-- LISTENER debug -->
-	<!-- ENDIF -->
+
 
 	<!-- IF not S_LOGGED_IN -->
 	<div id="dialog-login" title="{L_login}">
@@ -538,9 +539,8 @@
    		 });
    		 //]]>
 	</script>
-	{FOOTER_CODE}
+	
 	<!-- LISTENER body_bottom -->
-	<a id="bottom"></a>
-	</body>
+		</body>
 </html>
 <!-- ENDIF -->

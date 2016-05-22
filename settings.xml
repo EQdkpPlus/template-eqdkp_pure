@@ -9,7 +9,7 @@
 	<portal_width>0px</portal_width>
 	<background_pos>normal</background_pos>
 	<background_type>0</background_type>
-	<body_background_color>rgb(46, 120, 176)</body_background_color>
+	<body_background_color>#4E7D98</body_background_color>
 	<body_font_color>rgb(255, 255, 255)</body_font_color>
 	<body_font_size>13</body_font_size>
 	<body_font_family>Tahoma,Arial,Verdana,sans-serif</body_font_family>
@@ -21,7 +21,7 @@
 	<content_background_color>rgb(245, 245, 245)</content_background_color>
 	<content_font_color>rgb(0, 0, 0)</content_font_color>
 	<content_font_color_headings>rgb(0, 0, 0)</content_font_color_headings>
-	<content_link_color>rgb(78, 127, 168)</content_link_color>
+	<content_link_color>#17252D</content_link_color>
 	<content_link_color_hover>rgb(0, 0, 0)</content_link_color_hover>
 	<content_border_color>rgb(204, 204, 204)</content_border_color>
 	<content_accent_color>rgb(234, 234, 234)</content_accent_color>
@@ -36,7 +36,7 @@
 	<table_tr_background_color2>rgb(245, 245, 245)</table_tr_background_color2>
 	<table_tr_background_color_hover>rgb(232, 232, 232)</table_tr_background_color_hover>
 	<table_border_color>rgb(221, 221, 221)</table_border_color>
-	<menu_background_color>rgb(44, 115, 169)</menu_background_color>
+	<menu_background_color>#39709b</menu_background_color>
 	<menu_font_color>#f3f3f3</menu_font_color>
 	<menu_item_background_color>rgba(255, 255, 255, 0)</menu_item_background_color>
 	<menu_item_background_color_hover>rgb(0, 0, 0)</menu_item_background_color_hover>
@@ -44,10 +44,10 @@
 	<sidebar_background_color>rgb(234, 234, 234)</sidebar_background_color>
 	<sidebar_font_color>rgb(0, 0, 0)</sidebar_font_color>
 	<sidebar_border_color>rgb(204, 204, 204)</sidebar_border_color>
-	<button_background_color>rgb(0, 173, 238)</button_background_color>
+	<button_background_color>rgb(19,113,139)</button_background_color>
 	<button_font_color>rgb(228, 245, 252)</button_font_color>
-	<button_border_color>rgb(0, 118, 163)</button_border_color>
-	<button_background_color_hover>rgb(0, 149, 204)</button_background_color_hover>
+	<button_border_color>rgb(66,141,162)</button_border_color>
+	<button_background_color_hover>rgb(47,47,47)</button_background_color_hover>
 	<button_font_color_hover>rgb(217, 238, 247)</button_font_color_hover>
 	<button_border_color_hover>rgb(0, 118, 163)</button_border_color_hover>
 	<input_background_color>rgb(255, 255, 255)</input_background_color>
@@ -63,7 +63,7 @@
 	<content_negative_color>rgb(226, 59, 48)</content_negative_color>
 	<content_neutral_color>rgb(153, 153, 153)</content_neutral_color>
 	<content_highlight_color>#173c58</content_highlight_color>
-	<misc_color1>rgb(78, 127, 168)</misc_color1>
+	<misc_color1>#4E7D98</misc_color1>
 	<misc_color2>rgb(255, 255, 255)</misc_color2>
 	<misc_color3></misc_color3>
 	<misc_text1></misc_text1>

@@ -299,7 +299,6 @@ h3 {
 }
 
 #wrapper {
-	margin-bottom:20px;
 	text-align: left;
 	min-width:100%;
 	display:inline-block;
@@ -2287,7 +2286,7 @@ ul.portal_block {
 	background: transparent;
 }
 div #calendar_tab .ui-widget-content{
-	background: eqdkpContentBackgroundColor;
+	background: @eqdkpContentBackgroundColor;
 }
 .fc-icons{
 	margin-left: 4px;
@@ -2658,7 +2657,12 @@ div.error { display: none; }
 	margin-bottom: 10px;
 	color: #9f9f9f;
 }
-
+article .article_content.article-inlineedit{
+	background:#fff;
+}
+article .article_content form {
+	background: transparent;
+}
 .article_content{
 	line-height: 16px;
 }
@@ -4320,7 +4324,7 @@ button.thirdpartylogin.openid {
 }
 /* Ribbons */
 @ribbon: @eqdkpContentHighlightColor;
-@featuredColor: #008fb6;
+@featuredColor: #a3424c;
 
 .ribbon {
 	margin: 3px;
@@ -4381,7 +4385,7 @@ button.thirdpartylogin.openid {
 	box-shadow: 0 .062em 0 rgba(255,255,255,.6);
 }*/
 .featured .ribbon > span {
-	background: linear-gradient(-90deg, lighten(@featuredColor,20%) 0%, @featuredColor 100%);
+	background: linear-gradient(-90deg, lighten(@featuredColor,5%) 0%, @featuredColor 100%);
 	color: black;
 	box-shadow: 0 .125em .25em rgb(0, 0, 0);
 }
@@ -4497,8 +4501,9 @@ align-items:stretch;
 		justify-content: baseline;
 		flex: 1 1 auto;
 	}
-	.colorswitch{	
-	background-color: none;
+	.colorswitch, .colorswitch tr:nth-child(2n+1), .colorswitch > td:nth-child(2n+1),.colorswitch tr:nth-child(2n),{	
+	background-color: #000;
+	color: #bdbdbd;
 	display: flex;
 	align-items: flex-end;
 	text-align: center;
@@ -4525,17 +4530,17 @@ align-items:stretch;
 #contentFooter .portalbox_head .portal_fe_edit {
 		display:block;
 }
-#contentFooter .portalbox_content{
+#contentFooter .portalbox_content, #contentFooter .row1, #contentFooter .table{
 	background-color: #000;
 	color: #2F2F2F;
 	display:flex;
 }
-#contentFooter .menu li{
+#contentFooter .menu li:not(tagcloud_portal){
 	padding-top: 0px;
 	padding-bottom: 0px;
 	border-bottom: 1px solid #2F2F2F;
 	display:flex;
-& a{	color: #999;
+& a:not(tagcloud_portal){	color: #999;
 &:hover{
 		color:#FFF;	
 		text-decoration: none;	
@@ -4544,3 +4549,4 @@ align-items:stretch;
 #footer .menu li a::before{color: #2F2F2F;}
 
 /*END Portalmodule Menu in Footer*/
+
