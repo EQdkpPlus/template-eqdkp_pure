@@ -851,7 +851,7 @@ ul.adminmenu ul.sub-menu li:hover > .sub-menu-arrow:after {
 ul.mainmenu li a.link_indexphp:before, ul.mainmenu li a.link_entry_home:before { 
 	content:"\f015";
 	font-family: FontAwesome;
-	font-size: 18px;
+	font-size: 1em;
 }
 
 /* Links */
@@ -1769,84 +1769,89 @@ div.pagination {
 hr#system-readmore {
 	display:none;
 }
+@templateBreadcrumbColor:@eqdkpContentLinkColor;
+@templateBreadcrumbTextColor:@eqdkpBodyLinkColor;
 
-ul.breamcrumb {
-	color: @eqdkpContentFontColor;
-	font-size: 13px;
-	border-width: 1px;
-	border-style: solid;
-	border-color: @eqdkpContentBorderColor;
-	border-radius: @styleBorderRadius;
+ul.breadcrumb {
+	color: darken(desaturate(@templateBreadcrumbColor,40),15);
+	font-size: 1em;
 	overflow: hidden;
 	width: 100%;
-}
-
-ul.breamcrumb li {
 	float: left;
 }
 
-ul.breamcrumb a {
-	padding: .7em 1em .7em 2em;
+ul.breadcrumb li {
 	float: left;
-	text-decoration: none;
-	color: #444;
 	position: relative;
-	text-shadow: 0 1px 0 rgba(255,255,255,.5);
-	background-color: lighten(@eqdkpContentBackgroundColor, 5);
-	background-image: linear-gradient(to right, @eqdkpContentAccentColor, lighten(@eqdkpContentBackgroundColor, 5));
 }
 
-ul.breamcrumb li:first-child a{
-	padding-left: 1em;
-	padding-right: 0.5em;
-	padding-bottom: 0.3em;
+ul.breadcrumb a {
+	padding: 1em 0em 1em 1em;
+	display: block;
+	text-decoration: none;
+	color: @templateBreadcrumbTextColor;
+	text-transform: uppercase;
+	text-shadow: 0px 0px 16px @templateBreadcrumbColor;
+	position: relative;
+	margin-right:2em;
+	font-weight: bold;
 }
 
-ul.breamcrumb li:first-child a i {
-	font-size: 1.5em;
-	margin-top: -0.1em;
+ul.breadcrumb li:first-child a{
+	padding-left: 0em;
 }
 
-ul.breamcrumb a:hover{
-	background: lighten(@eqdkpContentBackgroundColor, 5);
+ul.breadcrumb li:first-child a i {
+	font-size: 1.8em;
+	margin-top: -6px;
+	margin-left:0.5em;
 }
 
-ul.breamcrumb a::after,
-ul.breamcrumb a::before{
+ul.breadcrumb a:hover:before{
+	border-bottom-color: @templateBreadcrumbTextColor;
+}
+
+ul.breadcrumb a::after,
+ul.breadcrumb a::before{
 	content: "";
 	position: absolute;
-	top: 50%;
-	margin-top: -1.5em;
-	border-top: 1.5em solid transparent;
-	border-bottom: 1.5em solid transparent;
-	border-left: 1em solid;
 	right: -1em;
 }
 
-ul.breamcrumb a::after{
+ul.breadcrumb a::after{
 	z-index: 2;
-	border-left-color: lighten(@eqdkpContentBackgroundColor, 5);
 }
 
-ul.breamcrumb a::before{
-	border-left-color: darken(@eqdkpContentAccentColor, 5);
-	right: -1.1em;
+ul.breadcrumb a:before{
+	right: -2em;
 	z-index: 1;
+	content: '\f054';
+	font-family: FontAwesome;
+	color: @templateBreadcrumbColor;
+	font-size: 0.9em;
+	font-weight: bold;
 }
 
-ul.breamcrumb a:hover::after{
-	border-left-color: lighten(@eqdkpContentBackgroundColor, 5);
+ul.breadcrumb a:hover{
+	color: @templateBreadcrumbColor;
+	text-shadow: 1px 2px 10px @templateBreadcrumbTextColor;
 }
 
-ul.breamcrumb .current,
-ul.breamcrumb .current:hover{
+ul.breadcrumb .current,
+ul.breadcrumb .current:hover{
 	font-weight: bold;
 	background: none;
+	border-bottom: 1px dotted darken(desaturate(@templateBreadcrumbColor,40),15);
 }
 
-ul.breamcrumb .current::after,
-ul.breamcrumb .current::before{
+ul.breadcrumb .current ::after,
+ul.breadcrumb .current ::before{
 	content: normal;
+}
+
+ul.breadcrumb li.current  a{
+	margin-right:0.5em;
+	margin-left:-0.5em;
 }
 
 .breadcrumb-container {
@@ -2375,7 +2380,7 @@ fieldset.settings.floatRight.raid input[type="text"]{
 	clear: both;
 }
 .bottommenu_roundedcorner{
-	border-radius: 10px 10px 0px 0px;
+	border-radius: @styleBorderRadius @styleBorderRadius 0px 0px;
 }
 .bottommenu_chars_table {
 	height: 70px;
@@ -3699,30 +3704,30 @@ button#cboxPrevious, button#cboxNext, button#cboxClose, button#cboxSlideshow {
 		float: none;
 	}
 
-	.responsive .breamcrumb li, .responsive .breamcrumb li a:after, .responsive .breamcrumb li a:before {
+	.responsive .breadcrumb li, .responsive .breadcrumb li a:after, .responsive .breadcrumb li a:before {
 		display: none;
 	}
 
-	.responsive .breamcrumb li:first-child, .responsive .breamcrumb li:nth-last-of-type(2) {
+	.responsive .breadcrumb li:first-child, .responsive .breadcrumb li:nth-last-of-type(2) {
 		display: inline;
 	}
 
-	.responsive .breamcrumb li:first-child a {
+	.responsive .breadcrumb li:first-child a {
 		border-right: 1px solid #ccc;
 		padding-right: 8px;
 		line-height: 27px;
 		padding-left: 8px !important;
 	}
 
-	.responsive .breamcrumb li {
+	.responsive .breadcrumb li {
 		font-size: 14px;
 	}
 
-	.responsive .breamcrumb li:nth-last-of-type(2) a {
+	.responsive .breadcrumb li:nth-last-of-type(2) a {
 		padding-left: 22px;
 	}
 
-	.responsive .breamcrumb li:nth-last-of-type(2) a:before {
+	.responsive .breadcrumb li:nth-last-of-type(2) a:before {
 		content:"\f060";
 		display:inline;
 		border: none;
@@ -3735,7 +3740,7 @@ button#cboxPrevious, button#cboxNext, button#cboxClose, button#cboxSlideshow {
 		font-family: "FontAwesome";
 	}
 
-	.responsive .breamcrumb li:first-child a:before {
+	.responsive .breadcrumb li:first-child a:before {
 		display: none;
 	}
 
