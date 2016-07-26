@@ -6,6 +6,8 @@
 - Javascript - done
 - Farbanpassungen vornehmen 99%
 - Responsiv 0%
+- Menüs überprüfen
+- einige basetemplate haben Fehler (raids/events/benutzerliste)-> Footmenü schwebt
 
 ###Footer
 - done 99%
@@ -26,6 +28,7 @@
  - zahlreiche BorderRadius ersetzt
  - Portalbreite und änderungen am Menü berücksichtigt
  - Responsive Design 10%
+ - Breadcrumb ersetzt und korrigiert
  
  ### Less
 - untouchy
