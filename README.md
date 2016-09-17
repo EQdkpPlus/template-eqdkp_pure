@@ -5,8 +5,8 @@
 ###Mainmenu
 - Javascript - done
 - Farbanpassungen vornehmen 99%
-- Responsiv 0%
-- Menüs überprüfen
+- Responsiv - no issue found
+- Menüs überprüfen - done
 - einige basetemplate haben Fehler (raids/events/benutzerliste)-> Footmenü schwebt
 
 ###Footer
@@ -17,7 +17,7 @@
 - fixiert
 - Uhrzeit befindet sich unter Notification (eingeloggt) 100%
 - Uhrzeit befinddet sich am alten Platz für nicht eingeloggte (Uhrzeit jetzt vs Raid startet) 100%
-- Search Button 0%
+- Search Button 0% (Wie war das nochmal??)
 
 ### index.tpl
 - Mainmenü befindet sich über content 100%
@@ -31,4 +31,7 @@
  - Breadcrumb ersetzt und korrigiert
  
  ### Less
-- untouchy
+- done
+
+ ### Status Modern
+- 17.09.2016

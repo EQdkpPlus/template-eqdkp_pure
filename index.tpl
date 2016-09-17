@@ -16,8 +16,8 @@
 		<title>{PAGE_TITLE}</title>
 		{CSS_FILES}
 		{JS_FILES}
-		<link rel="shortcut icon" href="{TEMPLATE_PATH}/images/favicon.png" type="image/png" />
-		<link rel="icon" href="{TEMPLATE_PATH}/images/favicon.png" type="image/png" />
+		<link rel="shortcut icon" href="{FAVICON}" type="{FAVICON_TYPE}" />
+		<link rel="icon" href="{FAVICON}" type="{FAVICON_TYPE}" />
 		<link rel="apple-touch-icon" href="{TEMPLATE_PATH}/images/apple-touch-icon.png" />
 		{RSS_FEEDS}
 		<!-- LISTENER head -->
@@ -199,7 +199,7 @@
 			</div> <!-- close personalArea -->
 		</header>
 		<div id="wrapper">
-			
+
 		<header>
 			<div id="banner">
 				<!-- LISTENER header_top -->
@@ -209,7 +209,7 @@
 						<a href="{EQDKP_CONTROLLER_PATH}{SID}"><img src="{HEADER_LOGO}" alt="{MAIN_TITLE}" id="mainlogo" /></a>
 						<!-- ENDIF -->
 					</div><!-- close logoArea -->
-					
+
 					<hgroup id="titles">
 							<h1>{MAIN_TITLE}</h1><br />
 							<h2>{SUB_TITLE}</h2>
@@ -221,8 +221,6 @@
 				<!-- LISTENER header_bottom -->
 			</div> <!-- close header-->
 		</header>
-		
-		
 
 			<!-- LISTENER content_container_top -->
 			<header>
@@ -249,7 +247,7 @@
 						</div>
 						<!-- LISTENER mainmenu -->
 					</div><!-- close mainmenu -->
-					
+
 					<!-- IF S_IN_ADMIN -->
 					<div id="adminmenu">
 						<div class="hiddenSmartphone">
@@ -274,11 +272,11 @@
 						</div> <!-- close first column -->
 					</aside>
 					<!-- ENDIF -->
-					
+
 					<article class="second column <!-- IF not S_PORTAL_RIGHT -->no_third_column<!-- ENDIF -->">
 						<div class="columnInner">
 							<!-- LISTENER content_middle_top -->
-						
+
 							<!-- IF S_SHOW_COOKIE_HINT -->
 							<div class="infobox infobox-large infobox-blue clearfix">
 								<i class="fa-info-circle fa pull-left fa-2x"></i> {COOKIE_HINT}
@@ -295,7 +293,7 @@
 									<!-- ENDIF -->
 								</div>
 							</header>
-							<!-- END global_warnings -->	
+							<!-- END global_warnings -->
 							<aside id="portal-middle">
 								<!-- LISTENER portal-middle-top -->
 								{PORTAL_MIDDLE}
@@ -307,10 +305,10 @@
 									<!-- LISTENER content_body_top -->
 									{GBL_CONTENT_BODY}
 									<!-- LISTENER content_body_bottom -->
-								</div>	
+								</div>
 							</div><!-- close contentBody -->
 							<!-- LISTENER content_middle_bottom -->
-							
+
 							<!-- IF S_NORMAL_FOOTER -->
 							<aside id="portal-footer">
 							<!-- LISTENER portal-bottom-top -->
@@ -330,7 +328,7 @@
 							</footer>
 						</div>
 					</article><!-- close second column -->
-					
+
 					<!-- IF S_PORTAL_RIGHT -->
 					<aside class="third column portal-right" style="<!-- IF T_COLUMN_RIGHT_WIDTH -->min-width:{T_COLUMN_RIGHT_WIDTH};max-width:{T_COLUMN_RIGHT_WIDTH}<!-- ELSE -->min-width: 200px;<!-- ENDIF -->">
 						<div class="columnInner">
@@ -342,7 +340,7 @@
 					<!-- ENDIF -->
 				</div>
 			</div>
-			
+
 			<footer id="contentFooter">
 				<!-- LISTENER content-footer-top -->
 				<div class="floatLeft">
@@ -351,16 +349,16 @@
 					<!-- ELSE -->
 					<div class="toggleResponsive"><a href="{SID}&toggleResponsive=mobile"><a href="{SID}&toggleResponsive=mobile"><i class="fa fa-lg fa-mobile-phone"></i> {L_mobile_version}</a></div>
 					<!-- ENDIF -->
-					
+
 					<!-- LISTENER content-footer-left -->
 				</div>
 				<div class="floatRight">
 					<!-- LISTENER content-footer-right -->
-				
+
 					<!-- IF not S_LOGGED_IN and S_STYLECHANGER -->
 					<a href="javascript:change_style();"><i class="fa fa-paint-brush"></i> {L_change_style}</a>
 					<!-- ENDIF -->
-					
+
 					<!-- IF S_GLOBAL_RSSFEEDS -->
 					<div class="rss-tooltip-container">
 						<a class="rss-tooltip-trigger tooltip-trigger" data-tooltip="rss-tooltip"><i class="fa hand fa-rss fa-lg"></i></a>
@@ -384,10 +382,8 @@
 				<!-- ENDIF -->{FOOTER_CODE}
 			</footer>
 		</section>
-		
 
 	</div><!-- close wrapper -->
-	
 
 
 	<!-- IF not S_LOGGED_IN -->
@@ -452,15 +448,15 @@
 				});
 			});
 			<!-- ENDIF -->
-			
+
 			<!-- IF S_NORMAL_HEADER -->
-			
+
 			function recalculate_notification_bubbles(){
 				var red = 0; var green = 0; var yellow = 0;
 				$('.notification-content ul li').each(function( index ) {
 					var myclass = $(this).attr('class');
 					var count = $(this).data('count');
-					
+
 					if (myclass == 'prio_0') green += parseInt(count);
 					if(myclass == 'prio_1') yellow += parseInt(count);
 					if(myclass == 'prio_2') red += parseInt(count);
@@ -480,14 +476,14 @@
 				} else {
 					$('.notification-bubble-red').html(red).hide();
 				}
-				
+
 				if (yellow ==0 && green==0 && red==0){
 					$('.notification-content ul').html({L_notification_none|jsencode});
 				}
-				
+
 				notification_favicon(red, yellow, green);
 			}
-			
+
 
 			function change_style(){
 				$('<div>').html('<div class="style-switch-container"><i class="fa fa-lg fa-spin fa-spinner"></i></div>').dialog(
@@ -498,19 +494,19 @@
 					}, title: {L_change_style|jsencode}, width: 600, height: 500}
 				);
 			}
-			
+
 			/* User clock */
 			var user_clock_format = "dddd, "+mmocms_user_dateformat_long+" "+ mmocms_user_timeformat;
 			var mymoment = moment(mmocms_user_timestamp_atom).utcOffset(mmocms_user_timezone);
-			
-			$(document).ready(function() {
+
+			$(function() {
 				$('.notification-mark-all-read').on('click', function() {
 				    $('.notification-content ul').html({L_notification_none|jsencode});
 					$('.notification-bubble-red, .notification-bubble-yellow, .notification-bubble-green').hide();
 					notification_favicon(0, 0, 0);
 					$.get(mmocms_controller_path+"Notifications"+mmocms_seo_extension+mmocms_sid+"&markallread");
 				});
-	
+
 				//Update Favicon
 				favicon = new Favico({animation:'none'});
 				notification_favicon({NOTIFICATION_COUNT_RED}, {NOTIFICATION_COUNT_YELLOW}, {NOTIFICATION_COUNT_GREEN});
