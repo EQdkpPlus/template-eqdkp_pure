@@ -84,7 +84,7 @@
 @styleArticleSitemapActiveColor: #999999;
 @styleArticleSitemapHoverColor: #000;
 @styleBorderRadius:0px;
-
+@styleShadowColor: #17252d;
 @stylePortalModulesBorderRadius:0px;
 @stylePortalModulesBorderColor:transparent;
 @stylePortalModulesColor:@eqdkpContentFontColor;

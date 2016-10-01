@@ -4386,7 +4386,7 @@ align-items:stretch;
 	background-color: #000;
 }
 
-#contentFooter .portalbox_head{
+#contentFooter .portalbox_head,#contentFooter .table th,#contentFooter .portalbox_content th{
 	background-color: #000;
 	text-transform: uppercase;
 	color: #bdbdbd;
