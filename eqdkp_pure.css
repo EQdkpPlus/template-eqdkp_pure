@@ -130,7 +130,7 @@ h3 {
 
 /* personal area */
 #personalArea {
-	background: linear-gradient(to bottom, @eqdkpUserareaBackgroundColor 0%, darken(@eqdkpUserareaBackgroundColor, 20) 100%); /* W3C */
+	background: @eqdkpUserareaBackgroundColor;
 	min-height: 39px;
 	color: @eqdkpUserareaFontColor;
 	font: 13px 'Trebuchet MS',Arial,sans-serif;
@@ -186,10 +186,9 @@ h3 {
 }
 
 #personalAreaTime #search_form input {
-	background-color: #D9D7D7;
-	border: 1px solid #717171;
-	border-radius: 4px 4px 4px 4px;
-	color: #262B31;
+	background-color: lighten(@eqdkpUserareaBackgroundColor,0%);
+	border: 1px solid lighten(@eqdkpUserareaBackgroundColor,40%);
+	color: @eqdkpUserareaFontColor;
 	height: 20px;
 	padding: 2px 5px;
 	width: 200px;
@@ -210,6 +209,20 @@ h3 {
 #personalAreaTime .personalAreaTime {
 	margin-top: 6px;
 }
+#loginarea_search {
+	width: 45px !important;
+	transition: width 0.5s ease-in-out;
+}
+
+#personalAreaTime .search_button {
+	width: 25px;
+	opacity: 0;
+	transition: opacity 1s ease-in;
+}
+#loginarea_search:hover,
+#loginarea_search:focus { width: 120px !important;	background-color: lighten(@eqdkpUserareaBackgroundColor,50%)!important;color: darken(@eqdkpUserareaFontColor,60%)!important; }
+#loginarea_search:hover ~ .search_button,
+#loginarea_search:focus ~ .search_button { opacity: 1; }
 
 /* footer */
 #footer {
@@ -384,11 +397,11 @@ img#mainlogo{
 
 /* Content Container */
 #contentContainer {
-	border: 1px solid @eqdkpContainerBorderColor;
+	/*border: 1px solid @eqdkpContainerBorderColor;*/
 	border-radius: @styleBorderRadius;
 	margin-left: 0px;
 	margin-right: 0px;
-	box-shadow: 2px 2px 3px 0px darken(@eqdkpContainerBorderColor, 10);
+	/*box-shadow: 2px 2px 3px 0px darken(@eqdkpContainerBorderColor, 10);*/
 }
 
 #contentBody {
@@ -402,6 +415,7 @@ img#mainlogo{
 	padding: 5px;
 	text-align: left;
 }
+div .contentFooter {background-color: @eqdkpContentBackgroundColor;padding: 3px 2px;}
 
 /* Sidebar */
 .contentSidebar {
@@ -435,7 +449,7 @@ img#mainlogo{
 }
 
 #contentFooter {
-	background-color: #000;
+	background-color: @styleContentFooter;
 	color: #999999;
 	min-height: 2.5em;
 	line-height: 2.5em;
@@ -444,7 +458,7 @@ img#mainlogo{
 }
 
 #contentFooter a, #contentFooter a:visited, #contentFooter a:hover{
-	color: @eqdkpMenuFontColor;
+	color: lighten(@eqdkpMenuFontColor,80%);
 	text-decoration: none;
 }
 
@@ -1030,16 +1044,16 @@ a.button, a.button:hover {
 .button, input[type="submit"], input[type="button"], input[type="reset"], button {
 	color: @eqdkpButtonFontColor;
 	border: solid 1px @eqdkpButtonBorderColor;
-	background: linear-gradient(to bottom, @eqdkpButtonBackgroundColor, darken(@eqdkpButtonBackgroundColor, 20));
+	background: @eqdkpButtonBackgroundColor;
 }
 .button:hover, input[type="submit"]:hover, input[type="button"]:hover, input[type="reset"]:hover, button:not(.ui-widget):hover {
 	color: @eqdkpButtonFontColorHover;
-	background: linear-gradient(to bottom, @eqdkpButtonBackgroundColorHover, darken(@eqdkpButtonBackgroundColorHover, 20));
+	background:@eqdkpButtonBackgroundColorHover;
 	border-color: @eqdkpButtonBorderColorHover;
 }
 .button:hover, input[type="submit"]:active, input[type="button"]:active, input[type="reset"]:active, button:not(.ui-widget):active {
 	color: @eqdkpButtonFontColorHover;
-	background: linear-gradient(to bottom, @eqdkpButtonBackgroundColorHover, darken(@eqdkpButtonBackgroundColorHover, 20));
+	background:@eqdkpButtonBackgroundColorHover;
 	border-color: @eqdkpButtonBorderColorHover;
 }
 
@@ -1992,7 +2006,7 @@ ul.portal_block {
 	left: 0;
 	bottom: 0;
 	right: 0;
-	filter: brightness(.5);
+	filter: brightness(.7);
 	transition: .5s ease-in-out;
 	z-index: 0;
 	background-size: cover;
@@ -2358,8 +2372,8 @@ fieldset.raidcal_infos dt, fieldset.moderation_panel dt {
 
 	/* drag & drop */
 	.ui-draggable			{ cursor:move; }
-	.ui-draggable-dragging	{ border:1px dotted @eqdkpContentPositiveColor; z-index:1; }
-	.highlight-dropzone		{ opacity:1 !important; min-height:60px; background:fadeout(@eqdkpContentHighlightColor,20%); }
+	.ui-draggable-dragging	{ position:absolute !important; border:1px dotted @eqdkpContentPositiveColor; z-index:1; }
+	.ui-droppable-active	{ opacity:1 !important; min-height:60px; background:fadeout(@eqdkpContentHighlightColor,20%); }
 }
 
 /* calendar: raidevent view - Not signed in Members Bar */
@@ -2709,15 +2723,6 @@ em {
 
 td.hiddenSmartphone, th.hiddenSmartphone {
 	display: table-cell;
-}
-
-.ui-notify h1 {
-	border: none;
-}
-
-.ui-notify a:hover {
-	color: #4E7FA8;
-	text-decoration: underline;
 }
 
 /* Social Bookmarks */
@@ -3732,10 +3737,6 @@ button#cboxPrevious, button#cboxNext, button#cboxClose, button#cboxSlideshow {
 		width: 100%;
 	}
 
-	.responsive .ui-notify-close {
-		font-size: 20px;
-	}
-
 	.responsive #mainlogo {
 		max-height: 50px;
 	}
@@ -3787,10 +3788,6 @@ button#cboxPrevious, button#cboxNext, button#cboxClose, button#cboxSlideshow {
 	  height: 0;
 	  margin: 10px 0;
 	  overflow: hidden;
-	}
-
-	.responsive .ui-notify {
-		max-width: 95%;
 	}
 
 	.responsive .langswitch-tooltip-trigger > span {
@@ -4046,11 +4043,10 @@ li.prio_2 {
 
 .bubble {
   background-color: @eqdkpContentHighlightColor;
-  border-radius: 9px;
-  color: @eqdkpContentBackgroundColor;
+  color: @eqdkpContentBackgroundColor !important;
   display: inline-block;
-  font-size: .70rem;
-  padding: 1px 6px 1px;
+	font-size: .90rem;
+	padding: 1px 10px 1px;
   position: relative;
   text-shadow: none !important;
   vertical-align: middle;
@@ -4109,8 +4105,8 @@ button.thirdpartylogin.battlenet {
 	border-color: transparent;
 }
 
-button.thirdpartylogin.persona {
-	background: #448bc9;
+button.thirdpartylogin.twitch {
+	background: #6441a4;
 	color: #fff;
 	border-radius: 3px;
 	border-color: transparent;
@@ -4340,17 +4336,20 @@ label.isBoolean > input[type="radio"]:checked + span.red, label.isBoolean > span
 }
 
 label.isBoolean > input[type="radio"]:checked + span.red, label.isBoolean > span.red:hover, label.isBoolean > span.red:active {
-        background: #e89795 !important;
+        background: @styleBooleanRed !important;
         color: @eqdkpInputFontColor !important;
 }
 
 label.isBoolean > input[type="radio"]:checked + span.green, label.isBoolean > span.green:hover, label.isBoolean > span.green:active {
-        background: #89bf8b !important;
-        color: #fff !important;
+        background: @styleBooleanGreen !important;
+        color: @eqdkpInputFontColor  !important;
 }
-/* End Boolean Boxes */
+.radioContainerBoolean, .radioContainer {
+	display: inline-block;
+}
+//End Boolean Boxes
 
-/*Portalmodule Menu in Footer*/
+//Portalmodule Menu in Footer
 .portal_block2{
 display:flex;
 justify-content:space-around;
@@ -4367,7 +4366,7 @@ align-items:stretch;
 		flex: 1 1 auto;
 	}
 	.colorswitch, .colorswitch tr:nth-child(2n+1), .colorswitch > td:nth-child(2n+1),.colorswitch tr:nth-child(2n),{	
-	background-color: #000;
+	background-color: @styleContentFooter;
 	color: #bdbdbd;
 	display: flex;
 	align-items: flex-end;
@@ -4383,11 +4382,11 @@ align-items:stretch;
 	width: 90%;
 	}
 #contentFooter .portalbox.menu_portal{
-	background-color: #000;
+	background-color: @styleContentFooter;
 }
 
 #contentFooter .portalbox_head,#contentFooter .table th,#contentFooter .portalbox_content th{
-	background-color: #000;
+	background-color: @styleContentFooter;
 	text-transform: uppercase;
 	color: #bdbdbd;
 	display: flex;
@@ -4396,7 +4395,7 @@ align-items:stretch;
 		display:block;
 }
 #contentFooter .portalbox_content, #contentFooter .row1, #contentFooter .table{
-	background-color: #000;
+	background-color: @styleContentFooter;
 	color: #2F2F2F;
 	display:flex;
 }

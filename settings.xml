@@ -25,7 +25,7 @@
 	<content_link_color_hover>rgb(0, 0, 0)</content_link_color_hover>
 	<content_border_color>rgb(204, 204, 204)</content_border_color>
 	<content_accent_color>rgb(234, 234, 234)</content_accent_color>
-	<userarea_background_color>rgb(69, 72, 77)</userarea_background_color>
+	<userarea_background_color>#1e3a50</userarea_background_color>
 	<userarea_font_color>rgb(217, 215, 215)</userarea_font_color>
 	<userarea_link_color>rgb(217, 215, 215)</userarea_link_color>
 	<userarea_link_color_hover>rgb(255, 255, 255)</userarea_link_color_hover>
@@ -89,5 +89,8 @@
 @stylePortalModulesBorderColor:transparent;
 @stylePortalModulesColor:@eqdkpContentFontColor;
 @stylePortalModulesBackgroundColor:@eqdkpContentBackgroundColor;
+@styleContentFooter: #0c0c0c;
+@styleBooleanGreen:#89bf8b;
+@styleBooleanRed:#e89795;
 	</additional_less>
 </settings>
