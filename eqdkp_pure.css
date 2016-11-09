@@ -1324,7 +1324,7 @@ fieldset.settings dd label {
 	margin: 0 10px 0 0;
 }
 fieldset.settings dt span {
-	color: lighten(@eqdkpContentFontColor, 50);
+	color: lighten(@eqdkpContentFontColor, 80);
 }
 
 img {
