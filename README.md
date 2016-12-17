@@ -16,12 +16,12 @@
 #PersonalArea
 - fixiert
 - Uhrzeit befindet sich unter Notification (eingeloggt) 100%
-- Uhrzeit befinddet sich am alten Platz für nicht eingeloggte (Uhrzeit jetzt vs Raid startet) 100%
-- Search Button 0% (Wie war das nochmal??)
+- Uhrzeit befindet sich am alten Platz für nicht eingeloggte (Uhrzeit jetzt vs Raid startet) 100%
+- Search Button 100% 
 
 ### index.tpl
 - Mainmenü befindet sich über content 100%
-- id=Banner definiert + CSS 99%
+- id=Banner definiert + CSS 100%
 
 
 ### CSS Allgmein
@@ -34,4 +34,4 @@
 - done
 
  ### Status Modern
-- 17.09.2016
+- 17.12.2016

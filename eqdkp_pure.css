@@ -986,8 +986,8 @@ input[type=radio], input[type=checkbox]{
 /* Buttons */
 .button, input[type="submit"], input[type="button"], input[type="reset"], button{
 	display: inline-block;
-	zoom: 1; /* zoom and *display = ie7 hack for display:inline-block */
-	*display: inline;
+	zoom: 1;
+	display: inline;
 	vertical-align: baseline;
 	margin: 0 2px;
 	outline: none;
@@ -2136,6 +2136,9 @@ ul.portal_block {
 #calendar_loading img{
 	margin: 0px 5px 0px 5px;
 }
+.fc-calendar-filter{
+	display: none;
+}
 .article_content .ui-widget-content{
 	background: @eqdkpContentBackgroundColor;
 }
@@ -2171,6 +2174,9 @@ div #calendar_tab .ui-widget-content{
 }
 .fc button {
 	box-shadow: none;
+}
+.fc-button-group button {
+	border-radius: 0em;
 }
 .fc .fc-toolbar > * > *{  border-radius: @styleBorderRadius;}
 .fc-event {	border-radius: @styleBorderRadius;}
@@ -4068,35 +4074,41 @@ h1 .bubble, h2 .bubble, h3 .bubble {
 button.thirdpartylogin.facebook {
 	background: #3b5998;
 	color: #fff;
-	border-radius: 3px;
+	border-radius: 0px;
 	border-color: transparent;
 }
 
 button.thirdpartylogin.google {
 	background: #dd4b39;
 	color: #fff;
-	border-radius: 3px;
+	border-radius: 0px;
 	border-color: transparent;
 }
 
 button.thirdpartylogin.battlenet {
 	background: #0e98d8;
 	color: #fff;
-	border-radius: 3px;
+	border-radius: 0px;
 	border-color: transparent;
 }
 
 button.thirdpartylogin.twitch {
 	background: #6441a4;
 	color: #fff;
-	border-radius: 3px;
+	border-radius: 0px;
 	border-color: transparent;
 }
 
 button.thirdpartylogin.openid {
 	background: #d5d5d5;
 	color: #000;
-	border-radius: 3px;
+	border-radius: 0px;
+	border-color: transparent;
+}
+button.thirdpartylogin.discord {
+	background: #7289DA;
+	color: #fff;
+	border-radius: 0px;
 	border-color: transparent;
 }
 
@@ -4347,7 +4359,7 @@ align-items:stretch;
 }
 #contentFooter .portalbox_content, #contentFooter .row1, #contentFooter .table{
 	background-color: @styleContentFooter;
-	color: #2F2F2F;
+	color: #bdbdbd;
 	display:flex;
 }
 #contentFooter .menu li:not(tagcloud_portal){
