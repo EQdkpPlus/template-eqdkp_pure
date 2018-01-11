@@ -41,7 +41,7 @@
 			//]]>
 		</script>
 	</head>
-	<body id="top" data-template="{TEMPLATE_CLASS}" class="<!-- IF S_REPONSIVE -->responsive <!-- ENDIF --><!-- IF not S_NORMAL_HEADER -->simple-header<!-- ENDIF --> {BROWSER_CLASS}<!-- IF T_PORTAL_WIDTH --> fixed_width<!-- ENDIF --><!-- IF S_IN_ADMIN --> admin<!-- ELSE --> frontend<!-- ENDIF -->">
+	<body id="top" data-template="{TEMPLATE_CLASS}" class="<!-- IF S_REPONSIVE -->responsive <!-- ENDIF --><!-- IF not S_NORMAL_HEADER -->simple-header<!-- ENDIF --> {BROWSER_CLASS}<!-- IF T_PORTAL_WIDTH --> fixed_width<!-- ENDIF --><!-- IF S_IN_ADMIN --> admin<!-- ELSE --> frontend<!-- ENDIF -->  {BODY_CLASS}">
 		<!-- LISTENER body_top -->
 		
 		{STATIC_HTMLCODE}
@@ -226,23 +226,32 @@
 			<header>
 				<nav id="nav">
 					<div id="mainmenu">
+						<!-- LISTENER mainmenu -->
 						<div class="hiddenSmartphone">
+							<!-- LISTENER menu_before -->
 							{MAIN_MENU}
+							<!-- LISTENER menu_after -->
 							<div class="clear noheight">&nbsp;</div>
 						</div>
 						<div class="hiddenDesktop nav-mobile">
-							<i class="fa fa-list hand" onclick="$('.nav-mobile-overlay').toggle();"></i>
-							<div class="nav-mobile-overlay">
-								<div class="nav-mobile-closebtn" onclick="$('.nav-mobile-overlay').toggle();">
-									<i class="fa fa-lg fa-times hand"></i>
+							<i class="fa fa-list hand" onclick="$('.nav-mobile .mobile-overlay').toggle();"></i>
+							<!-- LISTENER nav-mobile -->
+							<div class="mobile-overlay">
+								<div class="overlay-header">
+									<a class="title" href="{EQDKP_CONTROLLER_PATH}{SID}">
+										<!-- IF HEADER_LOGO --><img src="{HEADER_LOGO}" alt="{MAIN_TITLE}" /><!-- ELSE -->{MAIN_TITLE}<!-- ENDIF -->
+									</a>
+									<div class="close" onclick="$('.nav-mobile .mobile-overlay').toggle();"><i class="fa fa-times"></i></div>
 								</div>
-							{MAIN_MENU_MOBILE}
-							<!-- IF S_IN_ADMIN -->
-							<div class="admin-headline"><i class="fa fa-cog fa-lg"></i> {L_menu_admin_panel}</div>
-							{ADMIN_MENU_MOBILE}
-							<!-- ELSE -->
-								<!-- IF S_ADMIN --><div class="admin-headline"><a href="{EQDKP_ROOT_PATH}admin/{SID}"><i class="fa fa-cog fa-lg"></i> {L_menu_admin_panel}</a></div><!-- ENDIF -->
-							<!-- ENDIF -->
+								<div class="overlay-content">
+									<nav class="mainmenu-mobile-wrapper"><div class="heading">{L_menu_eqdkp}</div>{MAIN_MENU_MOBILE}</nav>
+									<!-- IF S_IN_ADMIN -->
+									<nav class="adminmenu-mobile-wrapper"><div class="heading">{L_menu_admin_panel}</div>{ADMIN_MENU_MOBILE}</nav>
+									<!-- ENDIF -->
+								</div>
+								<div class="overlay-footer">
+									<!-- IF S_ADMIN and not S_IN_ADMIN --><a href="{EQDKP_ROOT_PATH}admin/{SID}"><i class="fa fa-cog fa-lg"></i> {L_menu_admin_panel}</a><!-- ENDIF -->
+								</div>
 							</div>
 						</div>
 						<!-- LISTENER mainmenu -->
@@ -277,13 +286,6 @@
 						<div class="columnInner">
 							<!-- LISTENER content_middle_top -->
 
-							<!-- IF S_SHOW_COOKIE_HINT -->
-							<div class="infobox infobox-large infobox-blue clearfix">
-								<i class="fa-info-circle fa pull-left fa-2x"></i> {COOKIE_HINT}
-								<i class="fa-times fa pull-right hand" onclick="$(this).parent().hide()"></i>
-							</div>
-							<!-- ENDIF -->
-
 							<!-- BEGIN global_warnings -->
 							<header>
 								<div class="infobox infobox-large infobox-{global_warnings.CLASS} clearfix">
@@ -303,6 +305,11 @@
 							<div id="contentBody" class="{PAGE_CLASS}<!-- IF not S_NORMAL_HEADER --> simple-header <!-- ENDIF --><!-- IF not S_NORMAL_FOOTER --> simple-footer <!-- ENDIF -->">
 								<div id="contentBody2">
 									<!-- LISTENER content_body_top -->
+									
+									<!-- IF S_NORMAL_HEADER -->
+									<div class="breadcrumb-container">{BREADCRUMB}</div>
+									<!-- ENDIF -->
+									
 									{GBL_CONTENT_BODY}
 									<!-- LISTENER content_body_bottom -->
 								</div>
@@ -436,7 +443,7 @@
 	<script type="text/javascript">
 		//<![CDATA[			
 			<!-- IF not S_LOGGED_IN -->
-			$(document).ready(function() {
+			$(function() {
 				/* Login Dialog */
 				$( "#dialog-login" ).dialog({
 					height: <!-- IF S_BRIDGE_INFO -->450<!-- ELSE -->350<!-- ENDIF -->,
@@ -534,7 +541,10 @@
    		 //]]>
 	</script>
 	
+	{FOOTER_CODE}
+	
 	<!-- LISTENER body_bottom -->
+	<a id="bottom"></a>
 		</body>
 </html>
 <!-- ENDIF -->
